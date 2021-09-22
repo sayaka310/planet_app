@@ -19,7 +19,7 @@
     <p>
         <b>重量 : {{ $planet->weight }}</b>
     </p>
-
+    <p><a href="/planets/{{ $planet->id }}/edit"><input type="submit" value="編集"></a></p>
     <a href="/planets">戻る</a>
 </body>
 </html>
