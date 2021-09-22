@@ -24,7 +24,7 @@ class PlanetController extends Controller
         return view('planets.create');
     }
 
-    public function store(PlanetRequest $request)  
+    public function store(PlanetRequest $request)
     {
         $planet = new Planet;
 
@@ -40,7 +40,7 @@ class PlanetController extends Controller
     public function edit($id)
     {
         $planet = Planet::find($id);
-        return view('planets.edit',['planet' => $planet]);
+        return view('planets.edit', ['planet' => $planet]);
     }
 
     public function update(PlanetRequest $request, $id)

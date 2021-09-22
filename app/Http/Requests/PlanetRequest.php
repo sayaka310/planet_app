@@ -14,10 +14,10 @@ class PlanetRequest extends FormRequest
     public function rules()
     {
         return [
-        'name' => 'required|string',
-        'english_name' => 'required|string',
-        'radius' => 'required|integer',
-        'weight' => 'required|integer'
+            'name' => 'required|string',
+            'english_name' => 'required|string',
+            'radius' => 'required|integer',
+            'weight' => 'required|integer'
         ];
     }
 }
