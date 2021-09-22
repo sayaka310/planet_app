@@ -8,6 +8,18 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
+    @if ($errors->any())
+        <div class="error">
+            <p>
+                <b>{{ count($errors) }}件のエラーがあります。</b>
+            </p>
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <h1>
         <b>惑星情報編集</b>
     </h1>
@@ -20,7 +32,7 @@
         </p>
         <p>
             <label><b>名前(英語)</b></label>
-            <input type="text" name="english_name" value="{{ old('english_name', $planet->english) }}">
+            <input type="text" name="english_name" value="{{ old('english_name', $planet->english_name) }}">
         </p>
         <p>
             <label><b>半径</b></label>

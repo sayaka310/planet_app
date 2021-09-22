@@ -5,8 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>惑星情報登録</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
+    @if ($errors->any())
+        <div class="error">
+            <p>
+                <b>{{ count($errors) }}件のエラーがあります。</b>
+            </p>
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <h1>
         <b>惑星情報登録</b>
     </h1>
@@ -18,7 +31,7 @@
         </p>
         <p>
             <label><b>名前(英語)</b></label>
-            <input type="text" name="english_name" value="{{ old('english') }}">
+            <input type="text" name="english_name" value="{{ old('english_name') }}">
         </p>
         <p>
             <label><b>半径</b></label>
