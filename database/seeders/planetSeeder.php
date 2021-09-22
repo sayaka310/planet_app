@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class planetSeeder extends Seeder
+class PlanetSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,14 +14,13 @@ class planetSeeder extends Seeder
      */
     public function run()
     {
-        //
         $param = [
             [
                 'name' => '水星'
                 'english_name' => 'MARCURY'
                 'radius' => 2439,
                 'weight' => 3310,
-            ]
+            ],
             [
                 'name' => '金星',
                 'english_name' => 'VENUS',
@@ -64,12 +63,6 @@ class planetSeeder extends Seeder
                 'radius' => 24764,
                 'weight' => 1029660,
             ],
-            [
-                'name' => '金星',
-                'english_name' => 'VENUS',
-                'radius' => 6052,
-                'weight' => 48700,
-            ]
         ];
         DB::table('planets')->insert($param);
     }

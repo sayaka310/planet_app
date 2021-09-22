@@ -10,17 +10,20 @@ class PlanetController extends Controller
     public function index()
     {
         $planets = Planet::all();
-        return view('planets.index', compact('planets'));
+        return view('planets.index', ['planets' => $planets]);
     }
+
     public function show($id)
     {
         $planet = Planet::find($id);
-        return view('planets.show', compact('planet'));
+        return view('planets.show', ['planet' => $planet]);
     }
+
     public function create()
     {
         return view('planets.create');
     }
+
     public function store(PlanetRequest $request)  
     {
         $planet = new Planet;
@@ -37,7 +40,7 @@ class PlanetController extends Controller
     public function edit($id)
     {
         $planet = Planet::find($id);
-        return view('planets.edit',compact('planet'));
+        return view('planets.edit',['planet' => $planet]);
     }
 
     public function update(PlanetRequest $request, $id)
